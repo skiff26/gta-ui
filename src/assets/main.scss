@@ -1,1 +1,101 @@
 @import './base.scss';
+
+.info-panel {
+  position: absolute;
+  display: flex;
+  color: white;
+  gap: 20px;
+  top: 20px;
+  right: 20px;
+  user-select: none;
+
+  @media (max-width: 799px) {
+    gap: 15px;
+  }
+
+  &__money,
+  &__server {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    overflow: hidden;
+    &-icon {
+      position: relative;
+      padding: 3px 0 3px 5px;
+      border: 2px solid var(--grey);
+      border-right: none;
+      background-color: white;
+      svg {
+        position: relative;
+        z-index: 1;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        right: -10px;
+        width: 15px;
+        height: calc(100% + 4px);
+        background-color: white;
+        border: 2px solid var(--grey);
+        border-left: none;
+        transform: skewX(12deg);
+      }
+    }
+    &-text {
+      font-size: 1.125rem;
+      padding: 10px;
+      background-color: var(--grey);
+      white-space: nowrap;
+      position: relative;
+      span {
+        position: relative;
+        z-index: 1;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -5px;
+        width: 15px;
+        height: calc(100% + 4px);
+        background-color: white;
+        background-color: var(--grey);
+        transform: skewX(12deg);
+      }
+    }
+  }
+}
+
+.tips {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  user-select: none;
+  color: white;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    margin-bottom: 5px;
+    @media (min-height: 600px) {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}
