@@ -12,7 +12,7 @@
 			<div class="info-panel__server-icon">
 				<ServerLogo />
 			</div>
-			<div class="info-panel__server-text">Rage MP</div>
+			<div class="info-panel__server-text">{{ store.server.name }}</div>
 		</div>
 	</section>
 </template>

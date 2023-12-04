@@ -99,3 +99,90 @@
     }
   }
 }
+
+.hud {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 255px;
+  height: 175px;
+  user-select: none;
+  border: 5px solid var(--grey);
+  border-radius: 5px;
+  z-index: 2;
+
+  @media (max-width: 1023px) {
+    border-width: 3px;
+    width: 230px;
+    height: 160px;
+  }
+
+  &__map {
+    opacity: 0.8;
+    overflow: hidden;
+    height: calc(100% - 12px);
+    width: 100%;
+  }
+
+  &__info {
+    position: absolute;
+    top: 0;
+    right: -130px;
+    color: white;
+    line-height: 1.4;
+    font-style: italic;
+
+    div {
+      span,
+      time {
+        font-size: 0.875rem;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__info-time {
+    margin-top: 6px;
+  }
+
+  &__progress-lines {
+    display: flex;
+    background-color: var(--grey);
+    gap: 5px;
+
+    div {
+      width: 120px;
+      height: 12px;
+      border-top: 3px solid var(--grey);
+      overflow: hidden;
+      position: relative;
+      span {
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+
+  &__progress-health {
+    background-color: #799151;
+    span {
+      background-color: #a7c96c;
+      width: 32%;
+    }
+
+    &.low {
+      background-color: #7e221d;
+      span {
+        background-color: #b42829;
+      }
+    }
+  }
+
+  &__progress-armor {
+    background-color: #28566e;
+    span {
+      background-color: #3784ad;
+      width: 72%;
+    }
+  }
+}
