@@ -21,3 +21,9 @@ export interface Setting {
   min: number
   value: number
 }
+
+export interface KeyDown {
+  label: string
+  status: boolean
+  hide?: boolean
+}

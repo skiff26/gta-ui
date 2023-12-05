@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import type { Ref } from 'vue'
-import type { Server, Setting } from '@/interfaces'
+import type { Server, Setting, KeyDown } from '@/interfaces'
 
 export const useMainStore = defineStore('main', () => {
   const money = ref<Number>(505170619)
@@ -63,10 +63,36 @@ export const useMainStore = defineStore('main', () => {
     }
   })
 
+  const carData: Ref<{ [key: string]: KeyDown }> = ref({
+    KeyF: {
+      label: 'lock',
+      status: true
+    },
+    KeyL: {
+      label: 'light',
+      status: false
+    },
+    Digit2: {
+      label: 'key',
+      status: false
+    },
+    Numpad4: {
+      label: 'left',
+      status: true,
+      hide: true
+    },
+    Numpad6: {
+      label: 'right',
+      status: false,
+      hide: true
+    }
+  })
+
   return {
     money,
     server,
     settings,
+    carData,
     updateServer
   }
 })

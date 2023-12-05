@@ -9,7 +9,7 @@
 			<path speed-indicator
 				d="M41.5 169.5C20.0309 152.556 7 126.877 7 97.5C7 69.3852 19.0508 45.6011 38 28.5C53.4826 14.5273 74.4043 5.5 97.5 5.5C122.213 5.5 145.844 15.3608 162.5 31"
 				stroke="#6C6C6C" />
-			<path speed
+			<path speed="true"
 				d="M41.5 169.5C20.0309 152.556 7 126.877 7 97.5C7 69.3852 19.0508 45.6011 38 28.5C53.4826 14.5273 74.4043 5.5 97.5 5.5C122.213 5.5 145.844 15.3608 162.5 31"
 				stroke="#6C6C6C" :stroke-dasharray="store.settings.speed.value / store.settings.speed.max * 300 + ' 1000'" />
 		</svg>
@@ -21,13 +21,13 @@
 		</div>
 		<div class="speedometer__info">
 			<div class="speedometer__main">
-				<div class="speedometer__signal-left on">
+				<div class="speedometer__signal-left" :class="{ on: store.carData.Numpad4.status }">
 					<svg fill="#6c6c6c" width="30" height="30">
 						<use xlink:href="/icons.svg#signal"></use>
 					</svg>
 				</div>
 				<div class="speedometer__speed">{{ store.settings.speed.value }}<span>км/ч</span></div>
-				<div class="speedometer__signal-right">
+				<div class="speedometer__signal-right" :class="{ on: store.carData.Numpad6.status }">
 					<svg fill="#6c6c6c" width="30" height="30" style="transform: rotate(180deg)">
 						<use xlink:href="/icons.svg#signal"></use>
 					</svg>
@@ -36,14 +36,9 @@
 					<span v-for="digit in formattedMileage" :key="digit">{{ digit }}</span>
 				</div>
 			</div>
-			<svg fill="#6c6c6c" width="24" height="24" class="speedometer__indicator-lock on">
-				<use xlink:href="/icons.svg#lock"></use>
-			</svg>
-			<svg fill="#6c6c6c" width="24" height="24" class="speedometer__indicator-light">
-				<use xlink:href="/icons.svg#light"></use>
-			</svg>
-			<svg fill="#6c6c6c" width="24" height="24" class="speedometer__indicator-key">
-				<use xlink:href="/icons.svg#key"></use>
+			<svg fill="#6c6c6c" width="24" height="24" v-for="item in store.carData" :key="item.label"
+				:class="{ [`speedometer__indicator-${item.label}`]: true, on: item.status }">
+				<use :xlink:href="`/icons.svg#${item.label}`" v-if="!item.hide"></use>
 			</svg>
 		</div>
 	</section>

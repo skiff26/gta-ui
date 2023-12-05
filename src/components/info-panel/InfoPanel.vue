@@ -6,7 +6,7 @@
 					<use xlink:href="/icons.svg#dollar"></use>
 				</svg>
 			</div>
-			<div class="info-panel__money-text"><span>{{ formatMoney(store.money) }}</span></div>
+			<div class="info-panel__money-text"><span>{{ formatMoney(Number(store.money)) }}</span></div>
 		</div>
 		<div class="info-panel__server">
 			<div class="info-panel__server-icon">
