@@ -1,0 +1,121 @@
+.speedometer {
+  position: absolute;
+  bottom: -5px;
+  right: 40px;
+  width: 200px;
+  height: 200px;
+  user-select: none;
+  font-style: italic;
+
+  & > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    [speed-indicator] {
+      stroke-dasharray: 2 3;
+    }
+
+    [speed] {
+      stroke: white;
+      transition: all 0.3s linear;
+    }
+  }
+
+  &__info {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    & > svg {
+      position: absolute;
+      transition: all 0.3s ease;
+      &.on {
+        fill: white;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+  }
+
+  &__speed {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    font-size: 2.375rem;
+    width: 65px;
+    span {
+      color: var(--grey);
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__mileage {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: -30px;
+    color: white;
+    font-size: 0.875rem;
+    span {
+      border-bottom: 1px solid var(--grey);
+    }
+  }
+
+  &__indicator-lock {
+    top: 60px;
+    right: -15px;
+    transform: rotate(10deg);
+  }
+
+  &__indicator-light {
+    bottom: 70px;
+    right: -25px;
+  }
+
+  &__indicator-key {
+    bottom: 30px;
+    right: -15px;
+  }
+
+  &__petrol {
+    position: absolute;
+    left: -50px;
+    bottom: 20px;
+    width: 50px;
+    gap: 7px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 0.875rem;
+    svg {
+      transition: all 0.3s ease 0s;
+    }
+  }
+}
+
+.speedometer__signal-left,
+.speedometer__signal-right {
+  &.on {
+    svg {
+      animation: flash 1s ease infinite;
+    }
+  }
+}
+
+@keyframes flash {
+  50% {
+    fill: white;
+  }
+}

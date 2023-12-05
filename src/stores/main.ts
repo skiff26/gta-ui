@@ -1,6 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type { Server } from '@/interfaces'
+import type { Ref } from 'vue'
+import type { Server, Setting } from '@/interfaces'
 
 export const useMainStore = defineStore('main', () => {
   const money = ref<Number>(505170619)
@@ -38,9 +39,34 @@ export const useMainStore = defineStore('main', () => {
     }
   })
 
+  const settings: Ref<{ [key: string]: Setting }> = ref({
+    speed: {
+      name: 'Скорость',
+      prefix: 'км/ч',
+      max: 270,
+      min: 0,
+      value: 120
+    },
+    fuel: {
+      name: 'Топливо',
+      prefix: 'л',
+      max: 60,
+      min: 0,
+      value: 21
+    },
+    health: {
+      name: 'Здоровье',
+      prefix: 'HP',
+      max: 100,
+      min: 0,
+      value: 32
+    }
+  })
+
   return {
     money,
     server,
+    settings,
     updateServer
   }
 })

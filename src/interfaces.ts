@@ -13,3 +13,11 @@ export interface Server {
   time: string
   day: string
 }
+
+export interface Setting {
+  name: string
+  prefix: string
+  max: number
+  min: number
+  value: number
+}

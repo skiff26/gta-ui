@@ -2,8 +2,6 @@
 
 :root {
   --grey: #6c6c6c;
-  --speed: 120;
-  --max-speed: 170;
 }
 
 * {
@@ -87,7 +85,7 @@ html {
   font-size: 16px;
   font-weight: 400;
   background-color: #454545;
-  background-image: url('/bg.png');
+  background: url('/bg-game.png') center / cover no-repeat;
 }
 
 .wrapper {
@@ -96,14 +94,4 @@ html {
   flex-direction: column;
   min-height: 100vh;
   position: relative;
-}
-
-.main {
-  flex: 1 1 auto;
-}
-
-[class*='__container'] {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
 }
