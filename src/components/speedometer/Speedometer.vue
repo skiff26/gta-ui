@@ -15,7 +15,7 @@
 		</svg>
 		<div class="speedometer__petrol">
 			<svg :fill="store.settings.fuel.value > 40 ? 'white' : '#6c6c6c'" width="24" height="20">
-				<use xlink:href="icons.svg#fuel"></use>
+				<use xlink:href="/icons.svg#fuel"></use>
 			</svg>
 			<span>{{ store.settings.fuel.value }}л</span>
 		</div>
@@ -23,13 +23,13 @@
 			<div class="speedometer__main">
 				<div class="speedometer__signal-left on">
 					<svg fill="#6c6c6c" width="30" height="30">
-						<use xlink:href="icons.svg#signal"></use>
+						<use xlink:href="/icons.svg#signal"></use>
 					</svg>
 				</div>
 				<div class="speedometer__speed">{{ store.settings.speed.value }}<span>км/ч</span></div>
 				<div class="speedometer__signal-right">
 					<svg fill="#6c6c6c" width="30" height="30" style="transform: rotate(180deg)">
-						<use xlink:href="icons.svg#signal"></use>
+						<use xlink:href="/icons.svg#signal"></use>
 					</svg>
 				</div>
 				<div class="speedometer__mileage">
@@ -37,13 +37,13 @@
 				</div>
 			</div>
 			<svg fill="#6c6c6c" width="24" height="24" class="speedometer__indicator-lock on">
-				<use xlink:href="icons.svg#lock"></use>
+				<use xlink:href="/icons.svg#lock"></use>
 			</svg>
 			<svg fill="#6c6c6c" width="24" height="24" class="speedometer__indicator-light">
-				<use xlink:href="icons.svg#light"></use>
+				<use xlink:href="/icons.svg#light"></use>
 			</svg>
 			<svg fill="#6c6c6c" width="24" height="24" class="speedometer__indicator-key">
-				<use xlink:href="icons.svg#key"></use>
+				<use xlink:href="/icons.svg#key"></use>
 			</svg>
 		</div>
 	</section>

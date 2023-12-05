@@ -3,7 +3,7 @@
 		<div class="info-panel__money">
 			<div class="info-panel__money-icon">
 				<svg width="24" height="24">
-					<use xlink:href="icons.svg#dollar"></use>
+					<use xlink:href="/icons.svg#dollar"></use>
 				</svg>
 			</div>
 			<div class="info-panel__money-text"><span>{{ formatMoney(store.money) }}</span></div>

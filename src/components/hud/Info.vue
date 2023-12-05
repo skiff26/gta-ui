@@ -3,7 +3,7 @@
 		<div class="hud__info-deg">
 			{{ store.server.weather.deg }}
 			<svg width="20" height="20">
-				<use xlink:href="icons.svg#smog"></use>
+				<use xlink:href="/icons.svg#smog"></use>
 			</svg>
 			<span>{{ store.server.weather.name }}</span>
 		</div>
