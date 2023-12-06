@@ -5,6 +5,7 @@
 			<InfoPanel />
 			<Tips />
 			<Hud />
+			<Notification icon="done" message="Интерфейсы загружены" />
 			<Speedometer />
 		</main>
 	</div>
@@ -16,6 +17,7 @@ import Tips from '@/components/tips/Tips.vue'
 import Hud from '@/components/hud/Hud.vue'
 import Sliders from '@/components/sliders/Sliders.vue'
 import Speedometer from '@/components/speedometer/Speedometer.vue'
+import Notification from '@/components/notification/Notification.vue'
 import { onBeforeUnmount } from 'vue'
 import { useMainStore } from '@/stores/main'
 const store = useMainStore()
