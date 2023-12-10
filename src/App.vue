@@ -22,7 +22,7 @@ import { onBeforeUnmount } from 'vue'
 import { useMainStore } from '@/stores/main'
 const store = useMainStore()
 
-const keyPress = (event: any) => {
+const keyPress = (event: KeyboardEvent) => {
 	if (store.carData[event.code]?.label) {
 		store.carData[event.code].status = !store.carData[event.code].status
 	}
